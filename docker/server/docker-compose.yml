@@ -1,0 +1,13 @@
+---
+version: '3.8'
+services:
+
+   server:
+     image: lucmichalski/kep-server:alpine-latest
+     build: .
+     ports:
+     - 5890:5890
+     environment:
+     - SERVER_PORT=5890
+     volumes:
+     - ./kep-rest-api.py:/temp/kep-rest-api.py
